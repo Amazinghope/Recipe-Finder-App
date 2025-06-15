@@ -201,3 +201,28 @@ p {
 } */
 
  }
+
+ @media (max-width: 390px){
+ h3{
+   font-size: 1rem;
+  /* width: 60%; */
+   /* margin-top: 5px; */
+  /* color: rgb(247, 235, 235); */
+
+ } 
+
+ p{
+    font-size: 0.6rem;
+  }
+
+  .btns{
+    width: 100%;
+  }
+
+  .btn-div {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 6px;
+ 
+}
+ }
