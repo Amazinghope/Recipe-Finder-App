@@ -32,7 +32,7 @@ header {
 }
 
 .body-div {
-  width: 70%;
+  width: 100%;
   /* border: 1px solid red; */
   /* background-color: aquamarine; */
   background: url(../assets/kitchen-pic.jpg);
@@ -154,3 +154,50 @@ p {
   font-weight: bold;
   mix-blend-mode: screen;
 }
+
+
+ @media (max-width: 800px){
+
+
+  h3 {
+  font-size: 1.5rem;
+  width: 60%;
+   margin-top: 5px;
+  color: rgb(247, 235, 235);
+  /* animation: changeColor 10s infinite; */
+
+  /* mix-blend-mode: ; */
+  /* filter: grayscale(100%); */
+  /* filter: contrast(100%); */
+  /* filter: invert(100%); */
+  /* z-index: 1px; */
+}
+
+
+  p{
+    font-size: 0.8rem;
+  }
+
+  .btns{
+    width: 80%;
+  }
+
+  .btn-div {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 6px;
+ 
+}
+
+/* body ::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(3, 3, 4, 0.4);
+  z-index: -1;
+} */
+
+ }
