@@ -1,0 +1,528 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            line-height: 1.6;
+            color: #333; /* Darker text for readability */
+            background-color: rgb(2, 2, 54); /* Light grey background */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgb(38, 5, 5); /* Dark blue-grey */
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Ensure header stays on top */
+        }
+
+        header img {
+            width: 70%; /* Adjusted size for the logo */
+            height: 180px;
+            object-fit: contain; /* Ensure the image fits well */
+            margin-top: -45px; /* Space below logo */
+            /* vertical-align: middle; Align with text */
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-top: 0; /* Reset margin after logo */
+            margin-bottom: 0.5rem;
+            /* display: inline-block; To align next to image */
+            vertical-align: middle; /* Align with image */
+            /* margin-left: 10px; Space between logo and title */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease, background-color 0.3s ease;
+            border-radius: 8px;
+        }
+
+        nav button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav button.active {
+            border-bottom: 2px solid #3498db;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Main Content Area */
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Page Toggle Sections (using your .hero-page and .fav-page) */
+        .hero-page, .fav-page {
+            display: none; /* Hidden by default */
+            padding: 1rem 0;
+        }
+
+        .hero-page.active {
+            display: block; /* Shown when active */
+        }
+
+        /* Your .fav-page doesn't have .active in your HTML, will rely on JS to show/hide */
+        /* JS will add/remove 'active' class to .fav-page as needed */
+        .fav-page.active {
+            display: block;
+        }
+
+        .fav-page h3 { /* Style for your "Your Favourite Recipe" heading */
+            font-size: 1.8rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Search and Filter Container */
+        #search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        #search-container input,
+        #search-container select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        #search-container button {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #search-container button:hover {
+            background-color: #229a53;
+            transform: translateY(-2px);
+        }
+
+        /* Recipe Grid */
+        .recipe-grid {
+            display: grid;
+            /* Default for tablets/smaller desktops (between 769px and 1023px) */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 1rem 0;
+        }
+
+        .recipe-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recipe-info {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .recipe-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .recipe-info p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .recipe-action {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .recipe-action button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-grow: 1;
+        }
+
+        .view-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .view-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+
+        .like-btn {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .like-btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-1px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            display: flex; /* Use flexbox to center content */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #modal-info {
+            background-color: #ffffff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 900px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #close-btn {
+            color: #7f8c8d;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #close-btn:hover {
+            color: #333;
+        }
+
+        /* Recipe Detail Styles within Modal */
+        #modal-recipe-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .recipe-data {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 1rem 0 2rem;
+            color: #7f8c8d;
+            font-size: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .recipe-data span {
+            background-color: #ecf0f1;
+            padding: 8px 15px;
+            border-radius: 6px;
+        }
+
+        /* IMPORTANT: This class name matches your JS/HTML now */
+        .detail-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .favourite-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .favourite-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .ingredients-section,
+        .instructions-section,
+        .video-section {
+            margin-bottom: 25px;
+        }
+
+        .ingredients-section h3,
+        .instructions-section h3,
+        .video-section h3 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .ingredients-section ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        .ingredients-section ul li {
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .instructions-section p {
+            white-space: pre-wrap;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .video-section a {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .video-section a:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Empty state for containers */
+        .empty-message {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            padding: 30px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Footer (optional but good practice) */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            background-color: #ecf0f1;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+                margin-left: 0; /* Reset for mobile */
+                display: block; /* Make it block on mobile */
+            }
+            header img {
+                display: block; /* Make it block on mobile */
+                margin: 0 auto 0.5rem; /* Center and add margin below */
+            }
+
+            nav button {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+
+            main {
+                margin: 10px auto;
+                padding: 15px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            #search-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #search-container input,
+            #search-container select,
+            #search-container button {
+                width: 100%;
+                flex-grow: unset;
+            }
+
+            .recipe-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+                gap: 15px;
+            }
+
+            .recipe-card {
+                flex-direction: row;
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            }
+
+            .recipe-image {
+                width: 120px;
+                height: 100px;
+                flex-shrink: 0;
+                border-bottom: none;
+                border-right: 1px solid #eee;
+            }
+
+            .recipe-info {
+                padding: 10px 15px;
+                flex-grow: 1;
+            }
+
+            .recipe-info h3 {
+                font-size: 1.1rem;
+                margin-bottom: 4px;
+            }
+
+            .recipe-info p {
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+
+            .recipe-action button {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            #modal-info {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+                padding: 15px;
+            }
+
+            #modal-recipe-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .recipe-data {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 1.5rem;
+            }
+
+            .detail-image {
+                max-height: 250px;
+            }
+
+            .favourite-btn {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            .ingredients-section h3,
+            .instructions-section h3,
+            .video-section h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Desktop Styles for 4 columns */
+        @media (min-width: 1024px) {
+            .recipe-grid {
+                grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 columns */
+            }
+        }

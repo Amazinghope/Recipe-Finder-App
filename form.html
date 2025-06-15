@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <form action="">
+       <fieldset>
+         
+        <legend><h3>Sign Up For Free</h3></legend>
+
+       
+        <img src="/assets/logo-removebg-preview.png" alt="" /><br />
+        <!-- <label for="">Full Name</label> -->
+        <label for="fullName"> Full Name</label>
+        <input
+          type="text"
+          class="field"
+          placeholder="Enter Your Full Name"
+          required
+        /><br />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="field"
+          placeholder="Enter Your Email"
+          required
+        /> <br />
+
+        <label for="password">PassWord</label>
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          required
+        /><br />
+        <input type="submit" class="submit-btn" />
+      </fieldset> 
+    </form>
+   
+    <style>
+
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+
+     
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #ecf0f1; /* Light text for dark background */
+            background-color: #2c3e50; /* Dark blue-grey background */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding: 20px; /* Padding around the form */
+        }
+
+
+    fieldset{
+        border: none;
+     /* background-color: rgb(38, 5, 5); */
+     border-radius: 15px;
+     padding: 0;
+     margin: 0;
+   
+    }
+      /* form {
+        padding: 3%;
+        background-color: rgb(2, 2, 54);
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 20px;
+         border-radius: 15px;
+         color: white;
+      } */
+
+      form {
+            background-color: #34495e; /* Slightly lighter dark blue-grey for the form */
+            width: 90%; /* Responsive width for smaller screens */
+            max-width: 500px; /* Maximum width for larger screens */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center; /* Center elements like logo, legend */
+        }
+
+
+      /* img {
+        width: 20%;
+        height: 150px;
+        margin-top: -44px;
+        margin-left: 40%;
+        justify-content: center;
+      } */
+       img {
+            width: 20%; /* Increased size for logo */
+            height: 100px;
+            object-fit: contain;
+            margin: -20px auto -15px; /* Pull logo up, center, add space below */
+            display: block; /* Ensure margin auto works */
+            border-radius: 50%; /* Make logo circular if desired */
+            background-color: white; /* Background for placeholder logo */
+            padding: 5px; /* Small padding around logo */
+        }
+
+
+      /* input {
+        margin: auto;
+        line-height: 3rem;
+        text-align: center;
+        border-radius: 17px;
+        margin-top: 15px;
+        width: 80%;
+      } */
+
+      /* label {
+        font-size: 1.5rem;
+      } */
+
+       input {
+            width: 100%; /* Make inputs fill container */
+            padding: 12px 15px;
+            border: 1px solid #555;
+            border-radius: 8px; /* Rounded input fields */
+            font-size: 1rem;
+            color: #333; /* Dark text in input fields */
+            background-color: #f8f8f8; /* Light background for inputs */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+    input:focus {
+            outline: none;
+            border-color: #3498db; /* Blue border on focus */
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Soft blue shadow on focus */
+        }
+
+
+       label {
+            display: block; /* Make labels stack above inputs */
+            text-align: left; /* Align label text to the left */
+            font-size: 1.1rem;
+            margin-bottom: 8px; /* Space between label and input */
+            margin-top: 20px; /* Space above each label */
+            color: #ecf0f1;
+        }
+
+
+
+        .submit-btn {
+            background-color: #27ae60; /* Green submit button */
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px; /* Space above submit button */
+            padding: 15px; /* Larger padding for easier clicking */
+            border-radius: 8px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            width: 100%; /* Make submit button fill width */
+        }
+
+        .submit-btn:hover {
+            background-color: #229a53;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+
+      /* .submit-btn {
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 16%;
+        width: 80%;
+      }
+
+      .submit-btn:hover {
+        background-color: green;
+        color: antiquewhite;
+      } */
+
+      /* .field {
+        margin-left: 6.5%;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 2rem;
+      } */
+
+      legend {
+            background-color: #27ae60; /* Green for legend background */
+            padding: 10px 20px;
+            border-radius: 25px; /* More rounded legend */
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 auto 30px; /* Center legend and add space below */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block; /* Make it fit content */
+        }
+
+      /* legend{
+        padding: 3px 3px;  
+        background-image: linear-gradient(to top, rgb(2, 2, 54),
+         springgreen  );
+         border-radius:  35px;
+         margin-top: 5px;
+         color: white;
+         text-align: center;
+         text-decoration: double;
+         
+        } */
+
+     @media (max-width: 500px) {
+            form {
+                padding: 20px; /* Reduce padding on very small screens */
+                width: 95%; /* Take up more width */
+            }
+
+            legend {
+                font-size: 1.5rem;
+                padding: 8px 15px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+                margin-top: -60px; /* Adjust pull-up for smaller logo */
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            input {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                font-size: 1.1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+  </body>
+</html>

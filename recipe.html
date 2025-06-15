@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/recipe.css">
+    <title>Recipe-Finder-App</title>
+</head>
+<body>
+   <header>
+        <img src="./assets/logo-removebg-preview.png" alt="AmazingHope Logo"> <!-- Placeholder logo -->
+        <h1>AMAZINGHOPE RECIPE FINDER</h1>
+        <nav>
+            <button id="home-btn" class="active">Home</button>
+            <button id="fav-btn">Favorite</button>
+        </nav>
+    </header>
+
+    <main>
+        <!--Home Page-->
+        <div id="home-page" class="hero-page active">
+            <div id="search-container">
+                <input type="text" id="search" placeholder="Find Your Recipes....">
+                <select id="cuisine-sort">
+                    <option value="">All Cuisines</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                    <option value="Canadian">Canadian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Egyptian">Egyptian</option>
+                    <option value="French">French</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Kenyan">Kenyan</option>
+                    <option value="Malaysian">Malaysian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Moroccan">Moroccan</option>
+                    <option value="Pakistani">Pakistani</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Tunisian">Tunisian</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                </select>
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="recipe-container" class="recipe-grid">
+                <p class="empty-message">Loading delicious recipes...</p>
+            </div>
+        </div>
+
+        <!--Favorite Page-->
+        <div id="favorite-page" class="fav-page">
+            <h3>Your Favourite Recipe</h3>
+            <div id="fav-container" class="recipe-grid">
+                <p class="empty-message">You haven't saved any favorites yet. Go to the Home tab to find and save some!</p>
+            </div>
+        </div>
+
+        <!--Recipe Detail Modal-->
+        <!-- Modal moved outside main for common practice, but retains your IDs/Classes -->
+        <div id="recipe-modal" class="modal">
+            <div id="modal-info">
+                <span id="close-btn">&times;</span>
+                <div id="modal-recipe-info">
+                    <p class="empty-message">Loading recipe details...</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 AmazingHope Recipe Finder. All rights reserved.</p>
+    </footer>
+
+</main>
+<script src="./Scripts/recipe.js"></script>
+</body>
+</html>
