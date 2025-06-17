@@ -36,8 +36,9 @@
 
         header h1 {
             font-size: 2.2rem;
-            margin-top: 0; /* Reset margin after logo */
+            margin-top: -40px; /* Reset margin after logo */
             margin-bottom: 0.5rem;
+            /* border: 1px solid red; */
             /* display: inline-block; To align next to image */
             vertical-align: middle; /* Align with image */
             /* margin-left: 10px; Space between logo and title */
@@ -74,10 +75,12 @@
         /* Main Content Area */
         main {
             flex-grow: 1;
+            /* height: 100vh; */
             padding: 20px;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 20px auto;
-            background-color: #fff;
+            /* background-color: #fff; */
+            background-color: rgb(2, 2, 54);
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
@@ -145,6 +148,7 @@
 
         /* Recipe Grid */
         .recipe-grid {
+            
             display: grid;
             /* Default for tablets/smaller desktops (between 769px and 1023px) */
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -307,7 +311,6 @@
             border-radius: 6px;
         }
 
-        /* IMPORTANT: This class name matches your JS/HTML now */
         .detail-image {
             width: 100%;
             max-height: 450px;
@@ -407,16 +410,55 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 0.9rem;
-            margin-top: 30px;
+            /* margin-bottom: -10px; */
             background-color: #ecf0f1;
+            
         }
 
+       
+
+
         /* Mobile Styles */
+
+        
+        @media (max-width: 390px){
+       .h1 {
+            font-size: 1rem;
+            margin-top: -85px; 
+            /* color: blue; */
+           
+            /* margin-bottom: 0.5rem; */
+            /* display: inline-block; To align next to image */
+            /* vertical-align: middle; Align with image */
+            /* margin-left: 10px; Space between logo and title */
+        }
+
+           nav{
+            margin-top: -10px;
+           }
+
+
+           .img{
+            margin-top: -55px;
+           }
+        }
+      
+        
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 1rem;
+                margin-top: -35px;
                 margin-left: 0; /* Reset for mobile */
                 display: block; /* Make it block on mobile */
+             
+            }
+            .h1{
+                margin-top: -55px;
+            }
+
+            .img{
+                margin-top: -50px;
             }
             header img {
                 display: block; /* Make it block on mobile */
